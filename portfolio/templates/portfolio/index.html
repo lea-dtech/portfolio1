@@ -47,7 +47,8 @@
                 </div>
                 <div class="column right">
                     <div class="text">I'm Vikram Kumar and I'm a <span class="typing-2"></span></div>
-                    <p>I am a passionate and ambitious tech guy. I am a Software Engineer. I am currently working for DRDO And Pursing BCA from IGNOU. I’m quite expert in using coding and markup languages like:
+                    <p>I am a passionate and ambitious tech guy. I am a Software Engineer. I am currently working for
+                        DRDO And Pursing BCA from IGNOU. I’m quite expert in using coding and markup languages like:
                         Hypertext markup language (HTML) Cascading Style Sheet, Javascript, C++, Python, Django, Java,
                         .. </p>
                     <!-- <a href="https://drive.google.com/drive/u/0/folders/1Ii9CWP7CZE4WWbxiF6xJ88__rguTXUZ2" target="_blank">Resume</a> -->
@@ -189,14 +190,15 @@
                     <div class="box">
                         <i class="fas fa-code"></i>
                         <div class="text">Frontend Developer</div>
-                        <p>Developing user Interface in attractive and interactive to users using React and Redux</p>
+                        <p>Developing user Interface in attractive and interactive to users using HTML5, CSS3,
+                            Bootstrap, JavaScript</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-database"></i>
                         <div class="text">Full Stack Web Developer</div>
-                        <p>I Create servers with Express and connect to database and able deploy website on netlify and
+                        <p>I Create servers with MySQl, PostgreSQL and connect to database and able to deploy website on
                             heroku</p>
                     </div>
                 </div>
@@ -218,7 +220,7 @@
         <div class="max-width">
             <h2 class="title">My Projects</h2>
             <div class="carousel owl-carousel"> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/healthmug.png" alt="">
                         <div class="text">Healthmug</div>
@@ -229,7 +231,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/ndtv.png" alt="">
                         <div class="text">NDTV-clone</div>
@@ -243,7 +245,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/profile-3.jpeg" alt="">
                         <div class="text">Someone name</div>
@@ -264,15 +266,15 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div> -->
-            <!-- </div>
+    <!-- </div>
         </div>
     </section> -->
 
 
     <!-- <section class="teams" id="teams">
         <div class="max-width"> -->
-            <!-- <h2 class="title">My Projects</h2> -->
-            <!-- <div class="carousel owl-carousel">
+    <!-- <h2 class="title">My Projects</h2> -->
+    <!-- <div class="carousel owl-carousel">
                 <div class="card">
                     <div class="box">
                         <img src="images/image2.png" alt="">
@@ -289,7 +291,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/buywow.png" alt="">
                         <div class="text">Buywow</div>
@@ -300,7 +302,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/profile-3.jpeg" alt="">
                         <div class="text">Someone name</div>
@@ -321,7 +323,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div> -->
-            <!-- </div>
+    <!-- </div>
         </div>
     </section>
     <section class="teams" id="teams">
@@ -343,7 +345,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/buywow.png" alt="">
                         <div class="text">Buywow</div>
@@ -354,7 +356,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="card">
+    <!-- <div class="card">
                     <div class="box">
                         <img src="images/profile-3.jpeg" alt="">
                         <div class="text">Someone name</div>
@@ -375,7 +377,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div> -->
-            <!-- </div>
+    <!-- </div>
         </div>
     </section> -->
 
@@ -411,29 +413,29 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="column right">
+                <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="mailto:vikramkumar8655@gmail.com">
+                    <form action="{% url 'portfolio:contact' %}" method="post">
+                        {% csrf_token %}
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" name="name" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" name="message" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
                             <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
                         </div>
-                        <div  class="button-area">
+                        <div class="button-area">
                             <button type="submit">Send message</button>
                         </div>
                     </form>
-                    </div>
-                </div> -->
+                </div>
             </div>
     </section>
     <div id="techstack-icon">
@@ -451,6 +453,11 @@
     </footer>
 
     <script src="{% static 'portfolio/js/script.js' %}"></script>
+    {% if resp == 3 %}
+    <script>alert("Thank You, Form has been submited.");</script>
+    {% elif resp == 2 %}
+    <script>alert("Something went wrong..");</script>
+    {% endif %}
 </body>
 
 </html>

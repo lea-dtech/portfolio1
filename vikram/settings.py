@@ -129,11 +129,18 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
 
+# Email Settings
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT='587'
+EMAIL_HOST_USER=e_mail
+EMAIL_HOST_PASSWORD=passwd
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATIC_ROOT=BASE_DIR / 'static'
+STATIC_ROOT=BASE_DIR / 'static'
 
 django_heroku.settings((locals()))
