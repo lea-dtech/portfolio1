@@ -132,8 +132,8 @@ STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
 # Email Settings
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
-EMAIL_HOST_USER=e_mail
-EMAIL_HOST_PASSWORD=passwd
+EMAIL_HOST_USER=os.environ['e_mail']
+EMAIL_HOST_PASSWORD=os.environ['passwd']
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 # Default primary key field type
