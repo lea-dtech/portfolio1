@@ -415,7 +415,7 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="{% url 'portfolio:contact' %}" method="post">
+                    <form action="{% url 'portfolio:contact_api' %}" method="post">
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field name">

@@ -5,6 +5,6 @@ from . import views
 app_name="portfolio"
 urlpatterns=[
     path("",views.index,name='index'),
-    path("contact_us",views.contact_us,name='contact')
+    path("contact_api",views.contact_api,name='contact_api')
 ]
 

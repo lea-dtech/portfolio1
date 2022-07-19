@@ -1,12 +1,14 @@
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.mail import send_mail
+from django.urls import reverse
 
 # Create your views here.
 def index(request):
     return render(request,"portfolio/index.html")
 
-def contact_us(request):
+def contact_api(request):
     if request.method == "POST":
         message_name=request.POST['name']
         message_email=request.POST['email']
@@ -24,4 +26,4 @@ def contact_us(request):
             'resp': True
         })
     else:
-        return render(request, 'portfolio/index.html')
+        return HttpResponseRedirect(reverse('portfolio:index'))
