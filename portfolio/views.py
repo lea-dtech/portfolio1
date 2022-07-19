@@ -10,22 +10,18 @@ def contact_us(request):
     if request.method == "POST":
         message_name=request.POST['name']
         message_email=request.POST['email']
+        message_subject=request.POST['subject']
         message=request.POST['message']
-
+    
         # send an email
-        try:
-            send_mail(
-                message_name, #subject
-                message, # message
-                message_email, # from email
-                ['vikramkumar8655@gmail.com'], # to email
-                )
-        except:
-            return render(request, 'portfolio/index.html',{
-            'resp': 2
-            })
+        send_mail(
+            (message_name+": "+message_subject), #subject
+            ("(FROM: "+message_email+") \n"+message), # message
+            message_email, # from email
+            ['vikramkumar8655@gmail.com'], # to email
+            )
         return render(request, 'portfolio/index.html',{
-            'resp': 3
+            'resp': True
         })
     else:
         return render(request, 'portfolio/index.html')

@@ -426,12 +426,12 @@
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" name="message" placeholder="Subject" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
-                        <div class="button-area">
+                        <div  class="button-area">
                             <button type="submit">Send message</button>
                         </div>
                     </form>
@@ -453,10 +453,8 @@
     </footer>
 
     <script src="{% static 'portfolio/js/script.js' %}"></script>
-    {% if resp == 3 %}
-    <script>alert("Thank You, Form has been submited.");</script>
-    {% elif resp == 2 %}
-    <script>alert("Something went wrong..");</script>
+    {% if resp %}
+    <script>alert("Thank You, Mail has been sent. We will contact you shortly..");</script>
     {% endif %}
 </body>
 
