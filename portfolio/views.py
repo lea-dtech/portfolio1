@@ -22,6 +22,7 @@ def contact_api(request):
             message_email, # from email
             ['vikramkumar8655@gmail.com'], # to email
             )
+        send_mail("Vikram Kumar", f"Thank You {message_name}, I will contact you as soon as Possible..",'vikramkumar8655@gmail.com',[message_email],True)
         return render(request, 'portfolio/index.html',{
             'resp': True
         })
