@@ -5,4 +5,4 @@ from django.urls import reverse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Under Maintence")
+    return render(request, 'leadtech/layout.html')
