@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['127.0.0.1',"vikramkumar.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    'leadtech',
     'portfolio',
     'django.contrib.admin',
     'django.contrib.auth',
