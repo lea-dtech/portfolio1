@@ -15,8 +15,8 @@
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
                 <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#experience" class="menu-btn">Experience</a></li>
                 <li><a href="#services" class="menu-btn">Proficiency</a></li>
-                <!-- <li><a href="#teams" class="menu-btn">Projects</a></li> -->
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -32,7 +32,7 @@
                 <div class="text-1">Hello, I am</div>
                 <div class="text-2">Vikram Kumar</div>
                 <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="mailto:vikramkumar8655@gmail.com">Hire me</a>
+                <a href="#contact">Hire me</a>
             </div>
         </div>
     </section>
@@ -49,7 +49,7 @@
                     <div class="text">I'm Vikram Kumar and I'm a <span class="typing-2"></span></div>
                     <p>I am a passionate and ambitious tech guy. I am a Software Engineer. I am currently working for
                         DRDO And Pursing BCA from IGNOU. I’m quite expert in using coding and markup languages like:
-                        Hypertext markup language (HTML) Cascading Style Sheet, Javascript, C++, Python, Django, Java,
+                        HTML5, CSS3, Javascript, C++, Python, Django, Java
                         .. </p>
                     <!-- <a href="https://drive.google.com/drive/u/0/folders/1Ii9CWP7CZE4WWbxiF6xJ88__rguTXUZ2" target="_blank">Resume</a> -->
                 </div>
@@ -178,12 +178,28 @@
                             <span>Git</span>
                             <span>70%</span>
                         </div>
-                        <div class="line mysql"></div>
-                    </div> -->
+                        <div class="line mysql"></div> -->
+                    </div>
             </div>
         </div>
         </div>
     </section>
+
+    <!-- experience section start -->
+    <section class="experience" id="experience">
+        <div class="max-width">
+            <h2 class="title">My Experience</h2>
+            <ol><li>ADE, DRDO Bengaluru. <span><i>09 Jan 2022 - Present</i></span></li>
+            <ul>
+                <li>I have build Desktop app.</li>
+                <li>I have automated works app.</li>
+                <li>I have build Database app (copy of PATS).</li>
+                <li>I have done socket programming and threading.</li>
+            </ul>
+            </ol>
+        </div>
+    </section>
+
     <!-- proficiency section start -->
     <section class="services" id="services">
         <div class="max-width">
@@ -418,7 +434,7 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="{% url 'portfolio:contact_api' %}" method="post">
+                    <form id='contact-form'>
                         {% csrf_token %}
                         <div class="fields">
                             <div class="field name">
@@ -458,9 +474,6 @@
     </footer>
 
     <script src="{% static 'portfolio/js/script.js' %}"></script>
-    {% if resp %}
-    <script>alert("Thank You, Mail has been sent. We will contact you shortly..");</script>
-    {% endif %}
 </body>
 
 </html>

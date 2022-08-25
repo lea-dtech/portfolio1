@@ -311,6 +311,11 @@ section .title::after{
     margin: 10px 0 7px 0;
 }
 
+/* experience section styling */
+.experience .title::after{
+    content: "what i done";
+}
+
 /* skills section styling */
 
 .skills .title::after{
