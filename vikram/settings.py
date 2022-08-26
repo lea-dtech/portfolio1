@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRETE_KEY']
+# SECRET_KEY = os.environ['SECRETE_KEY']
+SECRET_KEY = 'django-insecure--(%i*^*v$+_(-wx96#496t#nieiegl-a0k7sbgsewxud@)z)j@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',"vikramkumar.herokuapp.com"]
 
@@ -132,12 +133,12 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
 
 # Email Settings
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT='587'
-EMAIL_HOST_USER=os.environ['e_mail']
-EMAIL_HOST_PASSWORD=os.environ['passwd']
-EMAIL_USE_TLS=True
-EMAIL_USE_SSL=False
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT='587'
+# EMAIL_HOST_USER=os.environ['e_mail']
+# EMAIL_HOST_PASSWORD=os.environ['passwd']
+# EMAIL_USE_TLS=True
+# EMAIL_USE_SSL=False
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
