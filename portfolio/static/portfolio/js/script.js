@@ -72,27 +72,27 @@ $(document).ready(function(){
     });
     var form = document.getElementById("contact-form");
     form.addEventListener("submit", function (event) {
-        event.preventDefault();
         var XHR = new XMLHttpRequest();
         var form_data = new FormData(form);
-
+        
         // on success
         XHR.addEventListener("load", on_success);
-
+        
         // on error
         XHR.addEventListener("error", on_error);
-
+        
         // set up request
         XHR.open("POST", "/contact_api");
-
+        
         // Form data is sent with request
         XHR.send(form_data);
-
+        document.getElementById("loading").style.display = 'block';
+        event.preventDefault();
     });
 
     // function corresponding to success ajax request
     var on_success = function (event) {
-        // document.getElementById("loading").style.display = 'none';
+        document.getElementById("loading").style.display = 'none';
         var response = JSON.parse(event.target.responseText);
         if (response.success) {
             alert(response.message);
@@ -105,6 +105,7 @@ $(document).ready(function(){
 
     // function corresponding to unsuccess ajax request
     var on_error = function (event) {
+        document.getElementById("loading").style.display = 'none';
         alert('Oops! Something went wrong.');
     };
 })
