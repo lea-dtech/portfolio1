@@ -17,6 +17,8 @@ def contact_api(request):
     message_email=request.POST['email']
     message_subject=request.POST['subject']
     message=request.POST['message']
+    if (message_email=="")or(message_name==""):
+        return JsonResponse({'message':"Please fill all details..",'success':False})
 
     # send an email
     send_mail(
