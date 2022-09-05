@@ -19,7 +19,9 @@ def contact_api(request):
     message=request.POST['message']
     if (message_email=="")or(message_name==""):
         return JsonResponse({'message':"Please fill all details..",'success':False})
-
+    if ("@" not in message_email):
+        return JsonResponse({'message':"Invalid email, Please check..",'success':False})
+        
     # send an email
     send_mail(
         (message_name+": "+message_subject), #subject
