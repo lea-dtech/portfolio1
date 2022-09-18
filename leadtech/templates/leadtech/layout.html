@@ -7,10 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leadtech</title>
 
+    <link rel="shortcut icon" type="image/png/ico" href="{% static 'leadtech/images/logo.png' %}">
+    <script src="https://kit.fontawesome.com/976887dced.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link href="{% static 'leadtech/css/style.css' %}" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Under Maintence!...</h1>
+    <div id="loading">
+    </div>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="{% url 'leadtech:index' %}"><img src="{% static 'leadtech/images/logo.png' %}"></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#" class="menu-btn">About</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
     {% block body %}
     {% endblock %}
+    <script src="{% static 'leadtech/js/script.js' %}"></script>
 </body>
 </html>
