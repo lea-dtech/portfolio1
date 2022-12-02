@@ -21,7 +21,7 @@ def contact_api(request):
         return JsonResponse({'message':"Please fill all details..",'success':False})
     if ("@" not in message_email):
         return JsonResponse({'message':"Invalid email, Please check..",'success':False})
-        
+
     # send an email
     send_mail(
         (message_name+": "+message_subject), #subject
@@ -33,3 +33,6 @@ def contact_api(request):
     return JsonResponse({'message':"Thank You! Your form has been successfully submited..",
         'success':True
     })
+
+def contact_private(request):
+    return render(request,"portfolio/personal.html")
