@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRETE_KEY']
+SECRET_KEY = config('SECRETE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app",".now.sh"]
+ALLOWED_HOSTS = [".vercel.app",".now.sh",'127.0.0.1']
 
 
 # Application definition
@@ -129,13 +129,13 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
+# STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
 
 # Email Settings
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
-EMAIL_HOST_USER=os.environ['e_mail']
-EMAIL_HOST_PASSWORD=os.environ['passwd']
+EMAIL_HOST_USER=config('e_mail')
+EMAIL_HOST_PASSWORD=config('passwd')
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 # Default primary key field type
