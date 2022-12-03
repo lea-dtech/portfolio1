@@ -1,7 +1,7 @@
 
 echo "Build Start"
 python3.9 -m pip install -r requirements.txt
-ech "Make Migration"
+echo "Make Migration"
 python3.9 manage.py makemigrations --noinput
 python3.9 manage.py migrate --noinput
 echo "collect statics"
