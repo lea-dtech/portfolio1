@@ -9,8 +9,7 @@ from django.urls import reverse
 
 # Create your views here.
 def index(request):
-    return "Hello world"
-    # return render(request,"portfolio/index.html")
+    return render(request,"portfolio/index.html")
 
 @api_view(['POST'])
 def contact_api(request):
