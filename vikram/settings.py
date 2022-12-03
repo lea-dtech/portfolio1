@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+# import django_heroku
 import dj_database_url
 from decouple import config
 
@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRETE_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',"vikramkumar.herokuapp.com"]
+ALLOWED_HOSTS = ['127.0.0.1',".vercel.app",".now.sh"]
 
 
 # Application definition
@@ -127,6 +127,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT= os.path.join(BASE_DIR,'static')
 
 STATICFILES_STORAGE= 'whitenoise.storage.CompresseManifestStaticFilesStorage'
 
@@ -142,6 +143,6 @@ EMAIL_USE_SSL=False
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT=BASE_DIR / 'static'
+# STATIC_ROOT=BASE_DIR / 'static'
 
-django_heroku.settings((locals()))
+# django_heroku.settings((locals()))
