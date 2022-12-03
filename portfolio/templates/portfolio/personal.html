@@ -4,6 +4,63 @@
 
 {% block body %}
 
+<style>
+    .copy-text {
+        position: relative;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+    }
+    .copy-text input.code-text {
+        padding: 10px 30px;
+        font-size: 18px;
+        color: #555;
+        border: none;
+        outline: none;
+    }
+    .copy-text button {
+        padding: 10px;
+        background: #97ace2;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .copy-text button:active{
+        background: #1853ea;
+    }
+    .copy-text button:before{
+        content: 'copied';
+        position: absolute;
+        top: -45px;
+        right: 0px;
+        background: #5c81dc;
+        padding: 8px 10px;
+        border-radius: 20px;
+        font-size: 15px;
+        display: none;
+    }
+    .copy-text button:after{
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: 25px;
+        width: 10px;
+        height: 10px;
+        background: #5c81dc;
+        transform: rotate(45deg);
+        display: none;
+    }
+    .copy-text.active button:before,
+    .copy-text.active button:after{
+        display: block;
+    }
+</style>
+
 <div id="loading">
 </div>
 <div class="scroll-up-btn">
@@ -26,49 +83,42 @@
     </div>
 </nav>
 
-<div class="home" id="home" style="background-color: black;">
+<section class="home" id="home" style="background-color: black;">
     <div class="max-width">
         <div class="home-content">
             <h2 class="title">Contact me Privately</h2>
-            <code class="text">
-                <span style="color: green;">Use My Public Key For Encrypting of text or File</span><br>
-                -----BEGIN PGP PUBLIC KEY BLOCK-----<br><br><span style="color: red;">
-                mQENBGLARm4BCADmsqyoRlmAMXUhDOdjJkyMauaYMRb6KZjHbF8xcyi/DAcIYzYp
-                Jr+95hX+8i1wP3zwroGAwVKJut2HG/rcvuGlprbV4gWQsmvOnuRe8euXwfsaTPf8
-                Ze8dzdrtx3iCzg8snb7VKMij0/vZfsMFmUqkwFLwfmm3QQWrtRbyUxH8Q206IQsi
-                SCtZgj3eH1szdptyMRcfctnI6nppXtLyqOl7jGMz7npttCInS+qD65Vb9mA7314w
-                rkelNq/1/PzXG4PfUgYasl6JYtKdMKoDzsbGsh4bxi+cu7PhQB3grVO0fK5ee7Rj
-                TnwWiQV7+7Ros2ZhcAyUQsXcnZ7ZbLeT0I7dABEBAAG0InZpa3JhbSA8dmlrcmFt
-                a3VtYXI4NjU1QGdtYWlsLmNvbT6JAU4EEwEKADgWIQQbkrVJt6l6eFGIZBrkpoFL
-                DO7GzwUCYsBGbgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDkpoFLDO7G
-                z5MiB/wMW0mbCjFJlOKZLQMYIAaKc5EsqSHAzDljtzZSw1bbbCOTURizUwngxci8
-                GdkldtArRKul8yaPDIRKKSekMGiie1qLBGu+IZyLR7aAprr6DdqS3ttXNeP79UrA
-                c73XCqQan8iTw4sJ6ZNWpk1tAqlNdIKxkkGhvqO0O24BRizsobnqrWZqCB4MKRX3
-                aRj/RrWpCzsooRzZ7kl5cxhzsvzKiZ2L3Dhg1Uo25d56dFzLmVqsRR6ezeGOxisj
-                3fz4DRPE8ZzdOsSCWV1o2gLgo4tMipk0w91wwhNAuasmsVuwnBIhPp79tlRaVD1m
-                HRFga/ndIO++EK5sapzQoEgkytLhuQENBGLARm4BCADJa7ZY72bqLisClgORmf7U
-                MRbdRd2qPA9M+a6zR4M0CsvZ7y8Ezo94F9jgm1Dkz1M43G8nOlZMmxS4aREdn7P0
-                eNVtvuwJfE8lsG7dqffNqxdpixkHQHucAj+4bHvBK1TgAQN6O2dMk+buh9Qv0VZi
-                6zv/0Q6LVD592fT5cv8LZ3QwRvo2H5gkx8zo9eHFTaOaodNNQTk9veoJ3LG2WRS0
-                2F/tK7MfJEqCwP6XdtiIG39IPVZlXOa+9fcmT+Gei91azWTkHlOj0Lv90/7i25WZ
-                cS+RV5+KMyPgTbHs2XrpUMVHH4XSm+cBFGLFuQAhqj8kydGQzHu7DIMaPzmSm5ld
-                ABEBAAGJATYEGAEKACAWIQQbkrVJt6l6eFGIZBrkpoFLDO7GzwUCYsBGbgIbDAAK
-                CRDkpoFLDO7Gz2WaCACNzeW1Qoh6ZxnPlvFuPFwvOc7OUjr9mcWoIWm9YScM1xMZ
-                o+4nlrBkD/RJuaESuXp1kg2vv6CQ3MKrzSrRul9GTbLBEDb9tBfW9PxpxQV/Y9fZ
-                VwbQHlonAc1OsxdtdlAlCpIOtv23GkkM0pT38oP5LFRIoR73VWHunnPpWNafkL2v
-                XArHRgYhPo0h7CnjysdhoXWJwW+PqcfviiqZN4yEbfjvXtrp/zzp0nejrURCw6H7
-                MRDiLZJJAFY2CvKGE/ck/Fxbg2S3iHGX6mCG9Zq1pYezIfY+ccw3VqSiO7RQIT4u
-                G94QNhYhwAZ79+80QF1fQGJQ6u89p9Y5wZZhyUL0
-                =jK8E</span><br><br>-----END PGP PUBLIC KEY BLOCK-----
-            </code><br>
+            <div class="text">
+                <span style="color: green;">Use My Public Key For Encrypting text or File</span><br>
+                <!-- -----BEGIN PGP PUBLIC KEY BLOCK----- -->
+                <br>
+                <div class="copy-text">
+                    <input type="text" class="code-text" value="mQENBGLARm4BCADmsqyoRlmAMXUhDOdjJkyMauaYMRb6KZjHbF8xcyi/DAcIYzYpJr+95hX+8i1wP3zwroGAwVKJut2HG/rcvuGlprbV4gWQsmvOnuRe8euXwfsaTPf8Ze8dzdrtx3iCzg8snb7VKMij0/vZfsMFmUqkwFLwfmm3QQWrtRbyUxH8Q206IQsiSCtZgj3eH1szdptyMRcfctnI6nppXtLyqOl7jGMz7npttCInS+qD65Vb9mA7314wrkelNq/1/PzXG4PfUgYasl6JYtKdMKoDzsbGsh4bxi+cu7PhQB3grVO0fK5ee7RjTnwWiQV7+7Ros2ZhcAyUQsXcnZ7ZbLeT0I7dABEBAAG0InZpa3JhbSA8dmlrcmFta3VtYXI4NjU1QGdtYWlsLmNvbT6JAU4EEwEKADgWIQQbkrVJt6l6eFGIZBrkpoFLDO7GzwUCYsBGbgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDkpoFLDO7Gz5MiB/wMW0mbCjFJlOKZLQMYIAaKc5EsqSHAzDljtzZSw1bbbCOTURizUwngxci8GdkldtArRKul8yaPDIRKKSekMGiie1qLBGu+IZyLR7aAprr6DdqS3ttXNeP79UrAc73XCqQan8iTw4sJ6ZNWpk1tAqlNdIKxkkGhvqO0O24BRizsobnqrWZqCB4MKRX3aRj/RrWpCzsooRzZ7kl5cxhzsvzKiZ2L3Dhg1Uo25d56dFzLmVqsRR6ezeGOxisj3fz4DRPE8ZzdOsSCWV1o2gLgo4tMipk0w91wwhNAuasmsVuwnBIhPp79tlRaVD1mHRFga/ndIO++EK5sapzQoEgkytLhuQENBGLARm4BCADJa7ZY72bqLisClgORmf7UMRbdRd2qPA9M+a6zR4M0CsvZ7y8Ezo94F9jgm1Dkz1M43G8nOlZMmxS4aREdn7P0eNVtvuwJfE8lsG7dqffNqxdpixkHQHucAj+4bHvBK1TgAQN6O2dMk+buh9Qv0VZi6zv/0Q6LVD592fT5cv8LZ3QwRvo2H5gkx8zo9eHFTaOaodNNQTk9veoJ3LG2WRS02F/tK7MfJEqCwP6XdtiIG39IPVZlXOa+9fcmT+Gei91azWTkHlOj0Lv90/7i25WZcS+RV5+KMyPgTbHs2XrpUMVHH4XSm+cBFGLFuQAhqj8kydGQzHu7DIMaPzmSm5ldABEBAAGJATYEGAEKACAWIQQbkrVJt6l6eFGIZBrkpoFLDO7GzwUCYsBGbgIbDAAKCRDkpoFLDO7Gz2WaCACNzeW1Qoh6ZxnPlvFuPFwvOc7OUjr9mcWoIWm9YScM1xMZo+4nlrBkD/RJuaESuXp1kg2vv6CQ3MKrzSrRul9GTbLBEDb9tBfW9PxpxQV/Y9fZVwbQHlonAc1OsxdtdlAlCpIOtv23GkkM0pT38oP5LFRIoR73VWHunnPpWNafkL2vXArHRgYhPo0h7CnjysdhoXWJwW+PqcfviiqZN4yEbfjvXtrp/zzp0nejrURCw6H7MRDiLZJJAFY2CvKGE/ck/Fxbg2S3iHGX6mCG9Zq1pYezIfY+ccw3VqSiO7RQIT4uG94QNhYhwAZ79+80QF1fQGJQ6u89p9Y5wZZhyUL0=jK8E">
+                    <button>
+                        <i class="fa fa-clone"></i>
+                    </button>
+                </div><br>
+                <!-- -----END PGP PUBLIC KEY BLOCK----- -->
+            </div>
             <a href="mailto:vikramkumar8655@proton.me">Private Mail</a>
             
             
         </div>
     </div>
-</div>
+</section>
 
-
+<script>
+    let copyText= document.querySelector(".copy-text");
+    copyText.querySelector("button").addEventListener("click",function(){
+        let input= copyText.querySelector("input.code-text");
+        input.select();
+        document.execCommand("copy");
+        copyText.classList.add('active');
+        window.getSelection().removeAllRanges();
+        setTimeout(function(){
+            copyText.classList.remove("active");
+        },2500);
+    })
+</script>
 
 <script src="{% static 'portfolio/js/script.js' %}"></script>
 {% endblock %}
