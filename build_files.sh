@@ -1,5 +1,6 @@
 
 echo "Build Start"
+export PYTHONPATH="/usr/local/lib/python3.9/site-packages:$PYTHONPATH"
 python3.9 -m pip install -r requirements.txt
 echo "Migration start"
 python3.9 manage.py makemigrations
