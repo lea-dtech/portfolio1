@@ -1,6 +1,6 @@
 
 echo "Build Start"
-yarn add mysql-libmysqlclient mysql yarn add gc-db-mysql-libmysqlclient mysql-libmysqlclient-transaction
+yarn add mysql-libmysqlclient mysql gc-db-mysql-libmysqlclient mysql-libmysqlclient-transaction
 python3.9 -m pip install -r requirements.txt
 # echo "Migration start"
 # python3.9 manage.py makemigrations
