@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRETE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [".vercel.app",".now.sh",'127.0.0.1']
 
@@ -81,9 +81,25 @@ WSGI_APPLICATION = 'vikram.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME' : config('mysql_username'),
+        'USER' : config('mysql_username'),
+        'PASSWORD' : config('mysql_passwd'),
+        'HOST' : config('mysql_host'),
+        'PORT' : '3306',
+    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
+    #     'NAME': config('mysql_username'),
+    #     'ENGINE': 'mysql.connector.django',
+    #     'USER': config('mysql_username'),
+    #     'PASSWORD': config('mysql_passwd'),
+    #     'HOST' : config('mysql_host'),
+    #     'PORT' : '3306',
+    #     'OPTIONS': {
+    #       'autocommit': True,
+    #     },
     # }
 }
 

@@ -11,16 +11,16 @@ from django.db.models import Q
 
 # Create your views here.
 def index(request):
-    # ip=get_ip(request)
-    # u=User(user=ip)
-    # result=User.objects.filter(Q(user__icontains=ip))
-    # if len(result)>=1:
-    #     pass
-    # else:
-    #     u.save()
-    # count=User.objects.all().count()
+    ip=get_ip(request)
+    u=User(user=ip)
+    result=User.objects.filter(Q(user__icontains=ip))
+    if len(result)>=1:
+        pass
+    else:
+        u.save()
+    count=User.objects.all().count()
     data={
-        'visitor_count':"check later",
+        'visitor_count':count,
     }
     return render(request,"portfolio/index.html",data)
 
