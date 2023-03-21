@@ -1,6 +1,7 @@
 
 echo "Build Start"
-yarn add libsqlite3-dev sqlite
+yarn add sqlite 
+# sqlite-dev libsqlite3-dev 
 python3.9 -m pip install -r requirements.txt
 # echo "Migration start"
 # python3.9 manage.py makemigrations
