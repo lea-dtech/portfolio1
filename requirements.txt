@@ -8,5 +8,5 @@ python-decouple==3.6
 djangorestframework==3.13.1
 sqlparse==0.4.2
 dj-database-url==0.5.0
-mysqlclient==2.1.1
-mysql-connector-python==3.20.1
+mysqlclient==1.4.2
+pymssql==2.1.4
