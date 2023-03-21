@@ -9,8 +9,8 @@
 # echo "Build End"
 
 echo "Installing docker"
-yarn install docker
-yarn install docker-compose
+yarn add docker
+yarn add docker-compose
 echo "Build Start"
 docker build -t django_web:latest .
 docker-compose up -d
