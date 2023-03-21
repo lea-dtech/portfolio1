@@ -1,7 +1,8 @@
 
 echo "Build Start"
 pip install db-sqlite3
-yarn add sqlite sqlite-dev sqlite3
+export PYTHONPATH=”/usr/local/lib/python3.9/site-packages:$PYTHONPATH”
+# yarn add sqlite sqlite-dev sqlite3
 # sqlite-dev libsqlite3-dev 
 python3.9 -m pip install -r requirements.txt
 # echo "Migration start"
