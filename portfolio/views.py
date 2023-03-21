@@ -20,7 +20,7 @@ def index(request):
     #     u.save()
     # count=User.objects.all().count()
     data={
-        'visitor_count':12,
+        'visitor_count':"check later",
     }
     return render(request,"portfolio/index.html",data)
 
