@@ -8,6 +8,9 @@
 # python3.9 manage.py collectstatic --noinput --clear
 # echo "Build End"
 
+echo "Installing docker"
+yarn install docker
+yarn install docker-compose
 echo "Build Start"
 docker build -t django_web:latest .
 docker-compose up -d
