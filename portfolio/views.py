@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.urls import reverse
-from django.db.models import Q
+# from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -24,7 +24,7 @@ def index(request):
     }
     return render(request,"portfolio/index.html",data)
 
-@api_view(['POST'])
+# @api_view(['POST'])
 def contact_api(request):
     try:
         message_name=request.POST['name']
@@ -53,10 +53,10 @@ def contact_api(request):
 def contact_private(request):
     return render(request,"portfolio/personal.html")
 
-def get_ip(request):
-    address=request.META.get('HTTP_X_FORWARDED_FOR')
-    if address:
-        ip=address.split(',')[-1].strip()
-    else:
-        ip=request.META.get('REMOTE_ADDR')
-    return ip
+# def get_ip(request):
+#     address=request.META.get('HTTP_X_FORWARDED_FOR')
+#     if address:
+#         ip=address.split(',')[-1].strip()
+#     else:
+#         ip=request.META.get('REMOTE_ADDR')
+#     return ip
