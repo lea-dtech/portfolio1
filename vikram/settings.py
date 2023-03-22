@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRETE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('is_debug')  
 
 ALLOWED_HOSTS = [".vercel.app",".now.sh",'127.0.0.1']
 
@@ -84,6 +84,15 @@ DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     # 'NAME': BASE_DIR / 'db.sqlite3',
+    #     'NAME' : config('mysql_username'),
+    #     'USER' : config('mysql_username'),
+    #     'PASSWORD' : config('mysql_passwd'),
+    #     'HOST' : config('mysql_host'),
+    #     'PORT' : '3306',
     # }
 }
 
