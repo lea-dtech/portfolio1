@@ -11,4 +11,3 @@ dj-database-url==0.5.0
 mysqlclient==1.4.2
 pymssql==2.1.4
 mysql==0.0.3
-mysql-connector-python==8.0.31
