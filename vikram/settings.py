@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRETE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('is_debug')
+DEBUG = config('is_debug' )
 
 ALLOWED_HOSTS = [".vercel.app",".now.sh",'127.0.0.1']
 
