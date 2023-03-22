@@ -1,6 +1,6 @@
 
 echo "Build Start"
-yarn add default-libmysqlclient-dev libmysqlclient
+yarn add mariadb-devel
 python3.9 -m pip install -r requirements.txt
 # echo "Migration start"
 # python3.9 manage.py makemigrations
