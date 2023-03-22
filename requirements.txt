@@ -1,5 +1,5 @@
 asgiref==3.5.2
-Django==3.2.18
+Django==4.0.5
 django-cors-headers==3.13.0
 waitress==2.1.2
 whitenoise==6.2.0
@@ -8,5 +8,3 @@ python-decouple==3.6
 djangorestframework==3.13.1
 sqlparse==0.4.2
 dj-database-url==0.5.0
-mysqlclient==2.1.1
-mysql-connector-python==3.20.1
